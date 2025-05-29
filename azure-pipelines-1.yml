@@ -1,0 +1,13 @@
+trigger:
+ - master
+
+pool:
+ name: Default
+ 
+ steps:
+ -script: echo My first Axure pipeline for maven project
+ display:'Run a one-line script'
+ -script:mvn clean install
+ display:'Build with maven'
+ -script:java -jar target/Maven-1.0-SNAPSHOT.jar
+ displayName:'Running with jar'
